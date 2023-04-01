@@ -15,7 +15,7 @@ Answers - Record a goose sighting
 
     <p>Here is the answer sheet for the 'Record a goose sighting' accessibility testing exercise. There are 19 issues in total.</p>
 
-    <p>Some of these issues would not be Web Content Accessibility Guidelines (WCAG)) 2.1 failures. But they could present issues to users with access needs, and WCAG compliance doesn't necessarily mean that something is accessible.</p>
+    <p>Some of these issues would not be Web Content Accessibility Guidelines (WCAG) 2.1 failures. But they could present issues to users with access needs, and WCAG compliance doesn't necessarily mean that something is accessible.</p>
 
     <h2 class="govuk-heading-m">Pages</h2>
 
@@ -23,7 +23,7 @@ Answers - Record a goose sighting
 
     <dl class="govuk-body">
       <dt class="govuk-!-font-weight-bold">Two h1 tags</dt>
-      <dd>It is good practice to have only one h1 tag. An h1 tag specifies what the top-level heading is for the entire page. It used to be permissible to have another h1 tag nested within a section element, but this was deprecated in HTML 5.1. This isn't a WCAG 2.1 failure.</dd>
+      <dd>It is good practice to have only one <code>h1</code> tag. An <code>h1</code> tag specifies what the top-level heading is for the entire page. It used to be permissible to have another <code>h1</code> tag nested within a section element, but this was deprecated in HTML 5.1. This isn't a WCAG 2.1 failure.</dd>
 
       <dt class="govuk-!-font-weight-bold">Altered tab order on side menu</dt>
       <dd>The tab order is a bit random when tabbing through the list of links on the right-hand side of the page. This is unpredictable and a bit disorienting. While it's not a huge issue in this scenario, if the links were further apart on the page or spread out more, it could cause issues for users who use a screen magnifier or browser zoom. They might not be able to tell where the focus has gone and have to hunt from it, or they might have had their screen view dragged across the page as it's following focus (depending on how they've configured their assistive technologies).</dd>
@@ -43,13 +43,13 @@ Answers - Record a goose sighting
     <dl class="govuk-body">
 
       <dt class="govuk-!-font-weight-bold">Missing page title</dt>
-      <dd>Some screen readers (like JAWS) read the page title out when the page loads. On this page, there is no title, which means a screen reader user is missing context. An example of a possible page title would be the page question, followed by the service name, and followed by whatever it's hosted on - so 'Do you like geese - Recording a goose sighting - GOV.UK', if it were on GOV.UK.</dd>
+      <dd>Some screen readers (like JAWS) read the page title out when the page loads. There is no title on this page, which means a screen reader user is missing context. An example of a possible page title would be the page question, followed by the service name, and followed by whatever it's hosted on - so 'Do you like geese - Recording a goose sighting - GOV.UK', if it were on GOV.UK.</dd>
 
       <dt class="govuk-!-font-weight-bold">No legend on the radio button</dt>
-      <dd>We can visually tell that the buttons relate to the main heading by looking at the page. But, the question isn't linked up to the element in a way that makes sense for users who can't see. For radio buttons and checkboxes, it's important to have a legend element. The fix would be making sure the 'h1' is inside the 'legend', as per the Design System pattern.</dd>
+      <dd>We can visually tell that the buttons relate to the main heading by looking at the page. But the question isn't linked up to the element in a way that makes sense for users who can't see. For radio buttons and checkboxes, it's important to have a <code>legend</code> element. The fix would be making sure the <code>h1</code> is inside the <code>legend</code>, as per the Design System pattern.</dd>
 
       <dt class="govuk-!-font-weight-bold">Continue button isn’t keyboard focusable</dt>
-      <dd>You can still get past this page by pressing enter when on the radio buttons, but a user might not know this. They might (understandably) expect that the only way to progress is by submitting from the button, and so feel trapped and abandon the service at this point. All interactive elements must be usable with the keyboard. The fix would be removing the tabindex="-1".</dd>
+      <dd>You can still get past this page by pressing enter when on the radio buttons, but a user might not know this. They might (understandably) expect that the only way to progress is by submitting from the button, and so feel trapped and abandon the service at this point. All interactive elements must be usable with the keyboard. The fix would be removing the <code>tabindex="-1"</code> attribute.</dd>
 
       <dt class="govuk-!-font-weight-bold">Insufficient colour contrast of the form hint</dt>
       <dd>The colour contrast is too low for the form hint text. In the Design System, it's a darker grey, which does have a sufficient colour contrast ratio. Respecting the out-of-the-box colours and not overriding them here would fix this issue.</dd>
@@ -62,7 +62,7 @@ Answers - Record a goose sighting
       <dd>Some screen readers (like JAWS) read the page title out when the page loads. On this page, the page title is 'Boop - Record a goose sighting' which tells the screen reader user nothing about what's on the page. A better format would be the page question, followed by the service name, and followed by whatever it's hosted on - so 'What type of goose did you see - Recording a goose sighting - GOV.UK', if it were on GOV.UK.</dd>
 
       <dt class="govuk-!-font-weight-bold">Visually hidden item you can tab onto</dt>
-      <dd>There is a ghost goose hidden on the page! There is some hidden text on the page, that can be tabbed to. While this isn't a particularly realistic example of this issue, sometimes inputs can get hidden off-screen. It can be confusing for keyboard users who are tabbing through the screen because the focus disappears. These users may end up not being entirely sure where or when it's going to reappear, or what would happen if you tried to select the element you were on. If something has focus, it's best that it becomes visible, at least for the duration of it having focus. In many cases, think about whether there is value for other users by having the content visible at all times.</dd>
+      <dd>There is a ghost goose hidden on the page! There is some hidden text on the page, that can be tabbed to. While this isn't a particularly realistic example of this issue, sometimes inputs can get hidden off-screen. It can be confusing for keyboard users who are tabbing through the screen because the focus disappears. These users may end up not being entirely sure where or when it's going to reappear, or what would happen if they tried to select the element you were on. If something has focus, it's best that it becomes visible, at least for the duration of it having focus. In many cases, think about whether there is value for other users by having the content visible at all times.</dd>
 
       <dt class="govuk-!-font-weight-bold">Placeholder text</dt>
       <dd>Placeholder text disappears when you start to type. This can be confusing, and if you struggle to remember things, you might then need to delete what you've typed in to remind yourself of what was there, in case it was important. It's best to include information like hints outside of the form field, where it can be seen at all times. This is essential if the placeholder text includes important formatting information.</dd>
@@ -81,7 +81,7 @@ Answers - Record a goose sighting
       <dd>We talked earlier about links needing to make sense out of context. In this component from the Design System, given the change link is just across from the question, it would look weird to have that visually included in the link. But, we can visually hide text - and that's what is normally done here. A sighted user would see 'change', but a screen reader user would hear 'change what type of goose did you see'. However, it's been configured incorrectly here - and random food items have been put in the visually hidden text instead of the proper text.</dd>
 
       <dt class="govuk-!-font-weight-bold">Incorrect heading level hierarchy</dt>
-      <dd>The heading hierarchy is currently h1 > h3. The 'goose details' heading should be an h2, as it is a direct descendant of the h1. This is an issue because screen reader users can pull all of the headings out into one summary list, as a quick way of skim-reading through what is on the page. If the ordering is incorrect like this, it can be hard to interpret when viewed in this way. When heading levels are not included, users might also spend time looking for the heading, thinking they are missing something.</dd>
+      <dd>The heading hierarchy is currently <code>h1</code> > <code>h3</code>. The 'goose details' heading should be an <code>h2</code>, as it is a direct descendant of the h1. This is an issue because screen reader users can pull all of the headings out into one summary list, as a quick way of skim-reading through what is on the page. If the ordering is incorrect like this, it can be hard to interpret when viewed in this way. When heading levels are not included, users might also spend time looking for the heading, thinking they are missing something.</dd>
     </dl>
 
   <h3 class="govuk-heading-s">End page</h3>
@@ -89,13 +89,13 @@ Answers - Record a goose sighting
     <dl class="govuk-body">
 
       <dt class="govuk-!-font-weight-bold">Use of capital letters</dt>
-      <dd>Text that is in all capital letters loses its shape. This can make it harder for some people with dyslexia to read. Unless absolutely necessary (like it is in a reference number), it's best to avoid writing words entirely in capital letters.</dd>
+      <dd>Text that is in all capital letters loses its word shape. This can make it harder for some people with dyslexia to read. Unless absolutely necessary (like it is in a reference number), it's best to avoid writing words entirely in capital letters.</dd>
 
       <dt class="govuk-!-font-weight-bold">Justified text</dt>
       <dd>Justified text forces words and letters to space out a little more than they normally would. This distorts the overall sentence shape a little. Justifying and centering content like this can make it harder to read for some people with dyslexia. The fix would be removing the styling that makes it justify, and allowing it to flow normally. This isn't a failure against WCAG 2.1 Level AA criteria but is a useful thing to do.</dd>
 
       <dt class="govuk-!-font-weight-bold">No alternative content for the GIF image</dt>
-      <dd>This image shows a happy goose celebrating knowledge about geese being shared with the world. This information isn't captured in any other medium such as text on the page, so descriptive alt text needs to be added here. If an img element doesn't have an alt attribute, then the href of the image may be read out by screen readers. There is a handy <a href="https://www.w3.org/WAI/tutorials/images/decision-tree/">alt decision tree by W3C</a> on how to decide how to write alt text, which is worth a look at.</dd>
+      <dd>This image shows a happy goose celebrating knowledge about geese being shared with the world. This information isn't captured in any other medium such as text on the page, so descriptive alt text needs to be added here. If an <code>img</code> element doesn't have an <code>alt</code> attribute, then the href of the image may be read out by screen readers. There is a handy <a href="https://www.w3.org/WAI/tutorials/images/decision-tree/">alt decision tree by W3C</a> on how to decide how to write alternative text, which is worth a look at.</dd>
 
       <dt class="govuk-!-font-weight-bold">Animation cannot be stopped.</dt>
       <dd>Moving content such as the happy goose can be a severe distraction for people with conditions such as attention deficit disorders, making it difficult to use the rest of the page. It should run no longer than 5 seconds or be able to be paused or hidden by the users.</dd>
