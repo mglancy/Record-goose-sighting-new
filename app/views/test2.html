@@ -1,0 +1,131 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% block pageTitle %}
+  Test 2
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+<!-- Disable browser validation for any examples that include form elements -->
+  <form action="/form-handler" method="post" novalidate>
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+
+{% set fieldsetStartHtml %}
+  <fieldset class="govuk-fieldset">
+  <legend class="govuk-visually-hidden">
+    Four additional questions about estimated value, outstanding mortgage, percentage share owned and to indicate a dispute about this property.
+  </legend>
+{% endset -%}
+
+{% set fieldsetEndHtml %}
+  </fieldset>
+{% endset -%}
+
+{% set valueHtml %}
+{{ govukInput({
+  id: "estimated-value",
+  name: "estimated-value",
+  type: "text",
+  spellcheck: false,
+  classes: "govuk-input--width-5",
+  label: {
+    text: "Estimated value of the additional property, holiday home or land"
+  },
+  prefix: {
+    text: "£"
+  }
+}) }}
+{% endset -%}
+
+{% set mortgageHtml %}
+  {{ govukInput({
+    id: "mortgage",
+    name: "mortgage",
+    type: "text",
+    classes: "govuk-input--width-5",
+    label: {
+      text: "Outstanding mortgage of the additional property, holiday home or land"
+    },
+    prefix: {
+      text: "£"
+    }
+  }) }}
+{% endset -%}
+
+{% set percentageHtml %}
+  {{ govukInput({
+    id: "percentage",
+    name: "percentage",
+    type: "text",
+    classes: "govuk-input--width-5",
+    label: {
+      text: "The percentage share your client owns of the additional property, holiday home or land"
+    },
+    suffix: {
+      text: "%"
+    }
+  }) }}
+{% endset -%}
+
+{% set disputeHtml %}
+  {{ govukCheckboxes({
+    name: "asset",
+    items: [
+      {
+        value: "dispute",
+        text: "This asset is a subject matter of dispute"
+      }
+    ]
+  }) }}
+{% endset -%}
+
+
+{{ govukRadios({
+  name: "additional-property",
+  fieldset: {
+    legend: {
+      text: "Does your client own any additional property, holiday home or land?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "This can be the sole property owned if not their main dwelling even if the property is abroad or not providing an income."
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes - 4 additional questions follow this",
+      checked: false,
+      conditional: {
+        html: fieldsetStartHtml + valueHtml + mortgageHtml + percentageHtml + disputeHtml + fieldsetEndHtml
+      }
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+</form>
+
+</div>
+</div>
+
+{% endblock %}
